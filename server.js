@@ -21,12 +21,17 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Server is up and running!');
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/preferences', preferencesRoutes);
 app.use('/api/info', getInfoRoutes);
 
 
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
