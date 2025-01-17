@@ -39,7 +39,7 @@ router.get('/venues', authMiddleware, async (req, res) => {
   }
 });
 
-
+// GET request to fetch guestSize and venues preference of the user
 router.get('/preferences', authMiddleware, async (req, res) => {
   const userId = req.userId; 
 
@@ -56,7 +56,7 @@ router.get('/preferences', authMiddleware, async (req, res) => {
   }
 });
 
-
+//  GET request to fetch name and email of the user
 router.get('/user-details', authMiddleware, async (req, res) => {
   const userId = req.userId; 
   
@@ -74,7 +74,7 @@ router.get('/user-details', authMiddleware, async (req, res) => {
   }
 });
 
-
+// POST request to update guestSize preference of the user
 router.post('/updateGuestSize', authMiddleware, async (req, res) => {
   const userId = req.userId;
   const { guestSize } = req.body;
@@ -93,7 +93,7 @@ router.post('/updateGuestSize', authMiddleware, async (req, res) => {
   }
 });
 
-
+// POST request to update venues preference of the user
 router.post('/updateVenues', authMiddleware, async (req, res) => {
   const userId = req.userId;
   const { venues } = req.body;

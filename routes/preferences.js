@@ -24,9 +24,9 @@ router.put('/updatePreferences', authMiddleware, async (req, res) => {
 
     // Use $set to update only the provided fields
     const updatedPreferences = await Preferences.findOneAndUpdate(
-      { userId },           // Find preferences by userId
-      { $set: updateFields }, // Set only the updated fields
-      { new: true }          // Return the updated document
+      { userId },           
+      { $set: updateFields },
+      { new: true }          
     );
 
     if (!updatedPreferences) {
